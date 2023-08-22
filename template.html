@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>欢迎来到 Linux 服务器信息在线查询页面</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <div class="content">{{content}}</div>
+</body>
+</html>
+
+<style>
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, #49a09d, #5f2c82);
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: #fff;
+    padding: 3rem 6rem;
+    transition: .2s;
+    border-radius: 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.5);
+}
+
+.content:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,.5);
+    border-radius: 20px;
+    cursor: pointer;
+}
+</style>

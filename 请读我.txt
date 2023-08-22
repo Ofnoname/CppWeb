@@ -1,0 +1,14 @@
+bychatgpt
+这个Makefile定义了以下目标：
+
+all：默认目标，它将编译主服务器程序和所有共享库。
+$(SERVER)：编译主服务器程序。
+$(MODULES_SO)：编译module目录下的所有共享库。
+clean：删除所有生成的文件。
+
+要使用此Makefile：
+将上述内容保存为名为Makefile的文件。
+在终端中，导航到包含Makefile的目录。
+输入make并按Enter。这将编译主程序和所有共享库。
+如果您想清理所有生成的文件，只需输入make clean。
+这个Makefile应该满足您的基本需求。如果您有任何其他特定的需求或配置，可以随时进行调整。

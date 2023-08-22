@@ -1,0 +1,23 @@
+# Compiler and flags
+CXX = g++
+CXXFLAGS = -Wall -Wextra
+LDFLAGS = -lpthread -ldl
+
+# Targets
+SERVER = server
+MODULES_DIR = module
+MODULES_SRC = $(wildcard $(MODULES_DIR)/*.cpp)
+MODULES_SO = $(patsubst %.cpp,%.so,$(MODULES_SRC))
+
+all: $(SERVER) $(MODULES_SO)
+
+$(SERVER): server.cpp module.cpp common.cpp main.cpp
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
+
+$(MODULES_DIR)/%.so: $(MODULES_DIR)/%.cpp
+	$(CXX) $(CXXFLAGS) -fPIC -shared $< -o $@
+
+clean:
+	rm -f $(SERVER) $(MODULES_SO)
+
+.PHONY: all clean
